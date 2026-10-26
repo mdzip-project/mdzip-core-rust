@@ -1,0 +1,3 @@
+# Spec fixtures are checked byte for byte against SPEC-FIXTURES.json, so git
+# must never convert their line endings (Windows checkouts default to CRLF).
+tests/fixtures/** -text
