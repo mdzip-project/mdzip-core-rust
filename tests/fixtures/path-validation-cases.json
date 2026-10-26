@@ -1,0 +1,82 @@
+[
+  {
+    "name": "simple markdown path is valid",
+    "path": "index.md",
+    "valid": true
+  },
+  {
+    "name": "nested asset path is valid",
+    "path": "assets/images/cover.png",
+    "valid": true
+  },
+  {
+    "name": "leading slash is invalid",
+    "path": "/index.md",
+    "valid": false,
+    "errorCode": "ERR_PATH_LEADING_SLASH"
+  },
+  {
+    "name": "path traversal is invalid",
+    "path": "../escape.md",
+    "valid": false,
+    "errorCode": "ERR_PATH_TRAVERSAL"
+  },
+  {
+    "name": "dot-dot segment in the middle is invalid",
+    "path": "docs/../index.md",
+    "valid": false,
+    "errorCode": "ERR_PATH_TRAVERSAL"
+  },
+  {
+    "name": "trailing dot-dot segment is invalid",
+    "path": "docs/..",
+    "valid": false,
+    "errorCode": "ERR_PATH_TRAVERSAL"
+  },
+  {
+    "name": "dot-dot inside a file name is valid",
+    "path": "notes..md",
+    "valid": true
+  },
+  {
+    "name": "dot-dot inside a folder name is valid",
+    "path": "v1..2/notes.md",
+    "valid": true
+  },
+  {
+    "name": "reserved character is invalid",
+    "path": "chapter:01.md",
+    "valid": false,
+    "errorCode": "ERR_PATH_RESERVED_CHAR"
+  },
+  {
+    "name": "backslash separator is invalid",
+    "path": "assets\\cover.png",
+    "valid": false,
+    "errorCode": "ERR_PATH_RESERVED_CHAR"
+  },
+  {
+    "name": "control character is invalid",
+    "path": "bad\u0001name.md",
+    "valid": false,
+    "errorCode": "ERR_PATH_CONTROL_CHAR"
+  },
+  {
+    "name": "leading dot segment is invalid",
+    "path": "./index.md",
+    "valid": false,
+    "errorCode": "ERR_PATH_INVALID"
+  },
+  {
+    "name": "dot segment in the middle is invalid",
+    "path": "docs/./intro.md",
+    "valid": false,
+    "errorCode": "ERR_PATH_INVALID"
+  },
+  {
+    "name": "empty segment is invalid",
+    "path": "docs//intro.md",
+    "valid": false,
+    "errorCode": "ERR_PATH_INVALID"
+  }
+]

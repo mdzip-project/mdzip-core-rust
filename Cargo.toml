@@ -1,0 +1,24 @@
+[package]
+name = "mdzip-core"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+description = "Read and write MDZip (.mdz) archives: Markdown documents and their images in one portable file."
+license = "Apache-2.0"
+repository = "https://github.com/mdzip-project/mdzip-core-rust"
+homepage = "https://mdzip.org"
+documentation = "https://docs.rs/mdzip-core"
+readme = "README.md"
+keywords = ["markdown", "mdzip", "mdz", "zip", "archive"]
+categories = ["parser-implementations", "encoding", "text-processing"]
+exclude = ["/private"]
+
+[dependencies]
+crc32fast = "1.5.3"
+miniz_oxide = "0.9.1"
+serde = "1.0.229"
+serde_json = { version = "1.0.154", features = ["preserve_order"] }
+unicode-normalization = "0.1.26"
+
+[dev-dependencies]
+sha2 = "0.10"
